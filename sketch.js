@@ -1,9 +1,23 @@
 function setup() {
-  createCanvas(400, 400);
-  boxText = createInput();
+  createCanvas(windowWidth/2, 400);
+  rampa = new Rampa(width*3/4);
+  carro = new Carro();
+  cabo = new Cabo();
+  rampAngle = createSlider(0, 89.9999999999999, 30, 1);
+  cableAngle = createSlider(0, 89.9999999999999, 0, 1);
 }
 
 function draw() {
   background(220);
-  triangle(0, height, width, height, width, height / 2);
+  rampa.angle = rampAngle.value();
+  cabo.angle = cableAngle.value();
+
+
+
+  carro.update(rampa);
+  cabo.update(rampa, carro);
+  cabo.show(carro);
+  carro.show();
+  rampa.show();
 }
+
