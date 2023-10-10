@@ -6,19 +6,17 @@ class Cabo{
     }
 
     show(carro){
-        push();
-        translate(carro.pos.x, carro.pos.y);
         line(this.start.x, this.start.y, this.end.x, this.end.y);
-        pop();
     }
 
     update(rampa, carro){
-        angleMode(DEGREES);
-        push();
-        translate(carro.pos.x, carro.pos.y);
-        let a = (width - carro.pos.x) / cos(this.angle + rampa.angle);
-        let b = a * sin(this.angle + rampa.angle);
-        this.end = new p5.Vector(width, b);
-        pop();
+        this.start = new p5.Vector(carro.pos.x -25 * rampa.normal.x, carro.pos.y -25 * rampa.normal.y);
+
+        let length = width - this.start.x;
+        let h = tan(this.angle + rampa.angle) * length;
+
+        line(this.start.x, this.start.y, width, this.start.y);
+        
+        this.end = new p5.Vector(width, h);
     }
 }

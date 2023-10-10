@@ -1,15 +1,18 @@
 class Carro{
   constructor(){
-    this.angle = 45;
+    this.angle = PI/4;
     this.pos = new p5.Vector();
   }
 
-  show(){
+  show(rampa){
     push();
-    angleMode(DEGREES);
     translate(this.pos.x, this.pos.y);
-    rotate(-this.angle-180);
+    rotate(-this.angle-PI);
     rect(0, 0, 100, 50);
+    pop();
+
+    push();
+    translate(this.pos.x, this.pos.y);
     pop();
   }
 

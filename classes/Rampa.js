@@ -1,10 +1,10 @@
 class Rampa{
     constructor(length){
-        this.angle = 45;
+        this.angle = PI/4;
         this.length = length;
         this.h = sin(this.angle) * (this.length / cos(this.angle));
-        this.vertex = [new p5.Vector(width-this.length, height), new p5.Vector(width, height), new p5.Vector(width, height - h)];
-        this.normal = new p5.Vector(0,0);
+        this.vertex = [new p5.Vector(width-this.length, height), new p5.Vector(width, height), new p5.Vector(width, height - this.h)];
+        this.normal = p5.Vector.sub(this.vertex[2], this.vertex[0]);
     }
 
     show(){
@@ -12,13 +12,14 @@ class Rampa{
     }
 
     update(){
-        angleMode(DEGREES);
+        let h = tan(this.angle) * this.length;
 
-        let a = this.length / cos(this.angle);
-        let h = sin(this.angle) * a;
+        
 
         this.vertex[0] = new p5.Vector(width-this.length, height);
         this.vertex[1] = new p5.Vector(width, height);
         this.vertex[2] = new p5.Vector(width, height - h);
+
+        this.normal = p5.Vector.sub(this.vertex[2], this.vertex[0]).rotate(HALF_PI).normalize();
     }
 }
