@@ -14,6 +14,7 @@ class Cabo{
 
         let length = width - this.start.x;
         let h = tan(this.angle + rampa.angle) * length;
+        console.log(tan(this.angle + rampa.angle));
 
         line(this.start.x, this.start.y, width, this.start.y);
         

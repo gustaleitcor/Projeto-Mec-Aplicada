@@ -45,3 +45,7 @@ function calculaBeta(tensao, peso, alpha){
     let beta = arccos((peso*9.8*sin(alpha)/tensao));
     return beta;
 }
+
+function degree(radians){
+    return 180 * radians / PI;
+}
