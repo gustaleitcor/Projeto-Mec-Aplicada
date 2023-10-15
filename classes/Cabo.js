@@ -17,6 +17,8 @@ class Cabo {
       -(this.angle + rampa.angle),
       -rampa.angle
     );
+	
+	drawingContext.setLineDash([5, 5]);
     line(
       this.start.x,
       this.start.y,
