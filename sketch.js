@@ -20,7 +20,7 @@ function draw() {
   carro.update(rampa);
   cabo.update(rampa, carro);
   rampa.update();
-
+  
   cabo.show(carro);
   carro.show(rampa);
   rampa.show();

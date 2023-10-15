@@ -12,12 +12,18 @@ class Cabo{
     update(rampa, carro){
         this.start = new p5.Vector(carro.pos.x -25 * rampa.normal.x, carro.pos.y -25 * rampa.normal.y);
 
-        let length = width - this.start.x;
-        let h = tan(this.angle + rampa.angle) * length;
-        console.log(tan(this.angle + rampa.angle));
+        this.angle += rampa.angle;
 
-        line(this.start.x, this.start.y, width, this.start.y);
         
-        this.end = new p5.Vector(width, h);
+
+        if (this.angle > HALF_PI){
+            let length = this.start.x;
+            let h = -tan(PI - this.angle) * length + this.start.y;
+            this.end = new p5.Vector(0, h);
+        }else{
+            let length = width - this.start.x;
+            let h = -tan(this.angle) * length + this.start.y;
+            this.end = new p5.Vector(width, h);
+        }
     }
 }
