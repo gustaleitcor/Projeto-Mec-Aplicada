@@ -1,9 +1,72 @@
-html,
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  width: fit-content;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  grid-template-areas:
+    "canvas canvas canvas"
+    "rampa-text rampa-value rampa-slider"
+    "cabo-text cabo-value cabo-slider"
+    "car-text car-value car-slider";
+  grid-template-columns: auto 1fr 3fr;
+  grid-template-rows: auto auto auto auto;
+  grid-column-gap: 10px;
+}
+
+main {
+  grid-area: canvas;
 }
 
 canvas {
-  display: block;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid black;
+  /* Add styling as needed */
+}
+
+.rampa-text {
+  grid-area: rampa-text;
+  width: fit-content;
+}
+
+.rampa-slider {
+  grid-area: rampa-slider;
+}
+
+.rampa-value {
+  grid-area: rampa-value;
+}
+
+.cabo-text {
+  grid-area: cabo-text;
+  width: fit-content;
+}
+
+.cabo-slider {
+  grid-area: cabo-slider;
+}
+
+.cabo-value {
+  grid-area: cabo-value;
+}
+
+.car-text {
+  grid-area: car-text;
+  width: fit-content;
+}
+
+.car-slider {
+  grid-area: car-slider;
+}
+
+.car-value {
+  grid-area: car-value;
 }

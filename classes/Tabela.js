@@ -1,0 +1,5 @@
+class Tabela {
+  show() {}
+
+  update() {}
+}
