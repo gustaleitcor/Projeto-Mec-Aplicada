@@ -4,6 +4,7 @@ function setup() {
   rampa = new Rampa((width * 3) / 4);
   carro = new Carro();
   cabo = new Cabo();
+  tabela = new Tabela();
 
   kwid_img = loadImage("kwid.png");
 
@@ -78,8 +79,10 @@ function draw() {
   carro.update(rampa);
   cabo.update(rampa, carro);
   rampa.update();
+  tabela.update(rampa, carro, cabo);
 
   rampa.show();
   carro.show(rampa);
   cabo.show(rampa, carro);
+  tabela.show();
 }
