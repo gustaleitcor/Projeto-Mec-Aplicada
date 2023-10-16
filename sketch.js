@@ -5,6 +5,8 @@ function setup() {
   carro = new Carro();
   cabo = new Cabo();
 
+  kwid_img = loadImage("kwid.png");
+
   createSpan("Ângulo da rampa: ").addClass("rampa-text");
   rampAngle = createSlider(0, 90, 30, 0.0001)
     .addClass("rampa-slider")
@@ -77,7 +79,7 @@ function draw() {
   cabo.update(rampa, carro);
   rampa.update();
 
-  cabo.show(rampa, carro);
-  carro.show(rampa);
   rampa.show();
+  carro.show(rampa);
+  cabo.show(rampa, carro);
 }

@@ -17,8 +17,8 @@ class Cabo {
       -(this.angle + rampa.angle),
       -rampa.angle
     );
-	
-	drawingContext.setLineDash([5, 5]);
+
+    drawingContext.setLineDash([5, 5]);
     line(
       this.start.x,
       this.start.y,
@@ -35,9 +35,10 @@ class Cabo {
   }
 
   update(rampa, carro) {
+    const h = 9;
     this.start = new p5.Vector(
-      carro.pos.x - 25 * rampa.normal.x,
-      carro.pos.y - 25 * rampa.normal.y
+      carro.pos.x - h * rampa.normal.x,
+      carro.pos.y - h * rampa.normal.y
     );
 
     if (this.angle + rampa.angle > HALF_PI) {

@@ -1,6 +1,6 @@
 class Rampa {
   constructor(length) {
-    this.angle = PI / 4;
+    this.angle = 0;
     this.length = length;
     this.h = sin(this.angle) * (this.length / cos(this.angle));
     this.vertex = [
