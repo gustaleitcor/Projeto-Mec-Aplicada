@@ -29,7 +29,8 @@ class Rampa {
         -height
       );
     }
-    arc(this.vertex[0].x, this.vertex[0].y, 150, 150, -this.angle, 0);
+
+    arc(this.vertex[0].x, this.vertex[0].y, 150, 150, -round(this.angle, 3), 0);
     push();
     text(rampAngle.value() + "°", this.vertex[0].x + 10, this.vertex[0].y - 10);
     pop();

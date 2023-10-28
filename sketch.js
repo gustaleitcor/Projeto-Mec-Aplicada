@@ -10,11 +10,13 @@ function setup() {
   g = 9.8;
 
   createSpan("Ângulo da rampa (°): ").addClass("rampa-text");
+
   rampAngle = createSlider(0, 90, 30, 0.0001)
     .addClass("rampa-slider")
     .changed(() => {
       rampAngleValue.value(rampAngle.value());
     });
+
   rampAngleValue = createInput()
     .addClass("rampa-value")
     .attribute("placeholder", "Ex: 30°")
@@ -26,11 +28,13 @@ function setup() {
   createP();
 
   createSpan("Ângulo da cabo (°): ").addClass("cabo-text");
+
   cableAngle = createSlider(0, 90, 15, 0.0001)
     .addClass("cabo-slider")
     .changed(() => {
       cableAngleValue.value(cableAngle.value());
     });
+
   cableAngleValue = createInput()
     .addClass("cabo-value")
     .attribute("placeholder", "Ex: 45°")
