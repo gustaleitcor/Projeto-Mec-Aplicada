@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(960, 600);
+  createCanvas(960, 558);
 
   rampa = new Rampa((width * 3) / 4);
   carro = new Carro();
