@@ -1,7 +1,7 @@
 class Tabela {
   constructor() {
     this.title = "Tabela de valores";
-    this.vals = { P: "", Px: "", Py: "", T: "", Tx: "", Ty: "" };
+    this.vals = { T: "", Tx: "", Ty: "" };
   }
   show() {
     push();
@@ -27,12 +27,14 @@ class Tabela {
   }
 
   update(rampa, carro, cabo) {
-    //const T = round(calculaTensao(carro.mass, rampa.angle, cabo.angle), 4);
-    //this.vals.P = round(calculaPeso(carro.mass))
-    //this.vals.Px = round(calculaPesoX(carro.mass, rampa.angle), 4) + "N";
-    //this.vals.Py = round(calculaPesoY(carro.mass, rampa.angle), 4) + "N";
-    //this.vals.T = T + "Pa";
-    //this.vals.Tx = round(calculaTensaoX(T, cabo.angle), 4) + "Pa";
-    //this.vals.Ty = round(calculaTensaoY(T, cabo.angle), 4);
+    const T = round(calculaTensao(carro.mass, rampa.angle, cabo.angle), 4);
+    const P = round(carro.mass * 9.8, 4);
+
+    this.vals.P = P + " N";
+    this.vals.Px = round(calculaPesoX(carro.mass, rampa.angle), 4) + " N";
+    this.vals.Py = round(calculaPesoY(carro.mass, rampa.angle), 4) + " N";
+    this.vals.T = T + " N";
+    this.vals.Tx = round(calculaTensaoX(T, cabo.angle), 4) + " N";
+    this.vals.Ty = round(calculaTensaoY(T, cabo.angle), 4) + " N";
   }
 }

@@ -22,7 +22,12 @@ class Rampa {
         this.vertex[2].y
       );
     } else {
-      rect(this.vertex[0].x, this.vertex[0].y, width, -height);
+      rect(
+        this.vertex[0].x,
+        this.vertex[0].y,
+        width - this.vertex[0].x,
+        -height
+      );
     }
     arc(this.vertex[0].x, this.vertex[0].y, 150, 150, -this.angle, 0);
     push();

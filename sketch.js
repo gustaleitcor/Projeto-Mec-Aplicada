@@ -8,7 +8,7 @@ function setup() {
 
   kwid_img = loadImage("kwid.png");
 
-  createSpan("Ângulo da rampa: ").addClass("rampa-text");
+  createSpan("Ângulo da rampa (°): ").addClass("rampa-text");
   rampAngle = createSlider(0, 90, 30, 0.0001)
     .addClass("rampa-slider")
     .changed(() => {
@@ -24,7 +24,7 @@ function setup() {
 
   createP();
 
-  createSpan("Ângulo da cabo: ").addClass("cabo-text");
+  createSpan("Ângulo da cabo (°): ").addClass("cabo-text");
   cableAngle = createSlider(0, 90, 15, 0.0001)
     .addClass("cabo-slider")
     .changed(() => {
@@ -40,7 +40,7 @@ function setup() {
 
   createP();
 
-  createSpan("Massa do carro: ").addClass("car-text");
+  createSpan("Massa do carro (kg): ").addClass("car-text");
   carMass = createSlider(0, 10000, 8000, 10)
     .addClass("car-slider")
     .changed(() => {
