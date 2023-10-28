@@ -9,6 +9,9 @@ function setup() {
   kwid_img = loadImage("kwid.png");
   g = 9.8;
 
+  createDiv(LOREM).addClass("left-text");
+  createDiv(LOREM).addClass("right-text");
+
   createSpan("Ângulo da rampa (°): ").addClass("rampa-text");
 
   rampAngle = createSlider(0, 90, 30, 0.0001)
@@ -25,7 +28,7 @@ function setup() {
     });
   rampAngleValue.value(30);
 
-  createP();
+  //createP();
 
   createSpan("Ângulo da cabo (°): ").addClass("cabo-text");
 
@@ -43,7 +46,7 @@ function setup() {
     });
   cableAngleValue.value(15);
 
-  createP();
+  //createP();
 
   createSpan("Massa do carro (kg): ").addClass("car-text");
   carMass = createSlider(0, 10000, 8000, 10)
@@ -96,3 +99,6 @@ function draw() {
   cabo.show(rampa, carro);
   tabela.show();
 }
+
+const LOREM =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at dui sodales, suscipit quam quis, vehicula eros. Vivamus ut sodales dolor. In auctor viverra enim. Nullam odio velit, pellentesque quis vestibulum eget, sodales et erat.";
