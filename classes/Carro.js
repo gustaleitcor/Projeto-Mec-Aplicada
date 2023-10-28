@@ -15,11 +15,12 @@ class Carro {
     //rect(0, 0, 100, 50);
     pop();
 
-    push();
-    translate(this.pos.x, this.pos.y);
-    rotate(-rampa.angle);
-    text(this.mass + "kg", -65 - 2 * int(log(this.mass + 0.1)), -20);
-    pop();
+    // push();
+    // translate(this.pos.x, this.pos.y);
+    // rotate(-rampa.angle);
+    // fill(color(0, 0, 200));
+    // text(this.mass + "kg", -65 - 2 * int(log(this.mass + 0.1)), -20);
+    // pop();
   }
 
   update(rampa) {
