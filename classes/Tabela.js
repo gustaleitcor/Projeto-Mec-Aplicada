@@ -1,7 +1,7 @@
 class Tabela {
   constructor() {
     this.title = "Tabela de valores";
-    this.vals = { T: "", Tx: "", Ty: "" };
+    this.vals = { P: "", Px: "", Py: "", T: "", Tx: "", Ty: "" };
   }
   show() {
     push();
@@ -21,20 +21,20 @@ class Tabela {
       text(entries[i][0], 0, 20 + 30 * i, width / 16, 30);
 
       rect(width / 16, 20 + 30 * i, (width * 3) / 16, 30);
-      text(entries[i][1], width / 16, 20 + 30 * i, (width * 3) / 16, 30);
+      text(entries[i][1] + " N", width / 16, 20 + 30 * i, (width * 3) / 16, 30);
       pop();
     }
   }
 
   update(rampa, carro, cabo) {
-    const T = round(calculaTensao(carro.mass, rampa.angle, cabo.angle), 4);
-    const P = round(carro.mass * 9.8, 4);
+    const P = round(calculaPeso(carro.mass, rampa.angle, cabo.angle), 4);
+    const T = round(calculaTracao(P, rampa.angle, cabo.angle), 4);
 
-    this.vals.P = P + " N";
-    this.vals.Px = round(calculaPesoX(carro.mass, rampa.angle), 4) + " N";
-    this.vals.Py = round(calculaPesoY(carro.mass, rampa.angle), 4) + " N";
-    this.vals.T = T + " N";
-    this.vals.Tx = round(calculaTensaoX(T, cabo.angle), 4) + " N";
-    this.vals.Ty = round(calculaTensaoY(T, cabo.angle), 4) + " N";
+    this.vals.P = P;
+    this.vals.Px = round(calculaPesoX(P, rampa.angle), 4);
+    this.vals.Py = round(calculaPesoY(P, rampa.angle), 4);
+    this.vals.T = T;
+    this.vals.Tx = round(calculaTracaoX(T, cabo.angle), 4);
+    this.vals.Ty = round(calculaTracaoY(T, cabo.angle), 4);
   }
 }

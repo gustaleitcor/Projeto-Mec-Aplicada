@@ -7,6 +7,7 @@ function setup() {
   tabela = new Tabela();
 
   kwid_img = loadImage("kwid.png");
+  g = 9.8;
 
   createSpan("Ângulo da rampa (°): ").addClass("rampa-text");
   rampAngle = createSlider(0, 90, 30, 0.0001)
@@ -70,9 +71,14 @@ function draw() {
     constrain(
       myLerpFunction(degrees(cabo.angle), cableAngle.value(), 0.15),
       0,
-      90
+      90 - degrees(rampa.angle)
     )
   );
+
+  if (cableAngle.value() + rampAngle.value() > 90) {
+    cableAngle.value(90 - rampAngle.value());
+    cableAngleValue.value(cableAngle.value());
+  }
 
   carro.mass = constrain(carMassValue.value(), 0, Infinity);
 

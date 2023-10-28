@@ -1,41 +1,31 @@
-function calculaPesoX(peso, alpha) {
-  let pesox = peso * 9.8 * sin(alpha);
+function calculaPeso(massa) {
+  const peso = massa * g;
+  return peso;
+}
+
+function calculaPesoX(peso, rampaAng) {
+  const pesox = peso * sin(rampaAng);
   return pesox;
 }
 
-function calculaPesoY(peso, alpha) {
-  let pesoy = peso * 9.8 * cos(alpha);
+function calculaPesoY(peso, rampaAng) {
+  const pesoy = peso * cos(rampaAng);
   return pesoy;
 }
 
-function calculaTensaoX(tensao, beta) {
-  let tensaox = tensao * 9.8 * cos(beta);
-  return tensaox;
+function calculaTracao(peso, rampaAng, caboAng) {
+  const tracao = (peso * sin(rampaAng)) / cos(caboAng);
+  return tracao;
 }
 
-function calculaTensaoY(tensao, beta) {
-  let tensaoy = tensao * 9.8 * sin(beta);
-  return tensaoy;
+function calculaTracaoX(tracao, caboAng) {
+  const tracaox = tracao * cos(caboAng);
+  return tracaox;
 }
 
-function calculaTensao(peso, alpha, beta) {
-  let tensao = (peso * 9.8 * sin(alpha)) / cos(beta);
-  return tensao;
-}
-
-function calculaPeso(tensao, alpha, beta) {
-  let peso = (tensao * cos(beta)) / sin(alpha);
-  return (peso / 9) * 8;
-}
-
-function calculaAlpha(tensao, peso, beta) {
-  let alpha = arcsin(((tensao * cos(beta)) / peso) * 9.8);
-  return alpha;
-}
-
-function calculaBeta(tensao, peso, alpha) {
-  let beta = arccos((peso * 9.8 * sin(alpha)) / tensao);
-  return beta;
+function calculaTracaoY(tracao, caboAng) {
+  const tracaoy = tracao * sin(caboAng);
+  return tracaoy;
 }
 
 function myLerpFunction(n, target, speed) {
