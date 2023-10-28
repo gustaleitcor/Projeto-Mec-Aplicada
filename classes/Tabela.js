@@ -8,6 +8,7 @@ class Tabela {
       T: new Element("Tração"),
       Tx: new Element("Tração em X"),
       Ty: new Element("Tração em Y"),
+      N: new Element("Normal"),
     };
   }
   show() {
@@ -60,6 +61,7 @@ class Tabela {
     this.vals.T.value = T;
     this.vals.Tx.value = round(calculaTracaoX(T, cabo.angle), 4);
     this.vals.Ty.value = round(calculaTracaoY(T, cabo.angle), 4);
+    this.vals.N.value = this.vals.Py.value - this.vals.Ty.value;
   }
 }
 
