@@ -25,7 +25,8 @@ class Carro {
   update(rampa) {
     const DISTANCE_FROM_ORIGIN = 200;
     this.angle = rampa.angle;
-    this.pos.x = cos(rampa.angle) * DISTANCE_FROM_ORIGIN + width / 4;
-    this.pos.y = sin(rampa.angle) * -DISTANCE_FROM_ORIGIN + height;
+    this.pos.x = cos(rampa.angle) * DISTANCE_FROM_ORIGIN + rampa.vertex[0].x;
+    this.pos.y =
+      sin(rampa.angle) * -DISTANCE_FROM_ORIGIN + height - rampa.hOffSet;
   }
 }
