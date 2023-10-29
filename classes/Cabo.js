@@ -41,14 +41,17 @@ class Cabo {
       carro.pos.y - h * rampa.normal.y
     );
 
-    if (this.angle + rampa.angle > HALF_PI) {
+    if (this.angle + rampa.angle > HALF_PI + 0.0001) {
       let length = this.start.x;
       let h = -tan(PI - (this.angle + rampa.angle)) * length + this.start.y;
       this.end = new p5.Vector(0, h);
-    } else {
+    } else if (this.angle + rampa.angle < HALF_PI - 0.0001){
       let length = width - this.start.x;
       let h = -tan(this.angle + rampa.angle) * length + this.start.y;
       this.end = new p5.Vector(width, h);
+    } else{
+      let length = this.start.x;
+      this.end = new p5.Vector(this.start.x, 0);
     }
   }
 }
